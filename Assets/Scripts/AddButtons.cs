@@ -1,16 +1,19 @@
 using UnityEngine;
+using System.Collections;
 
 public class AddButtons : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] Transform puzzleField;
+    [SerializeField] GameObject btn;
+    [SerializeField] int numButtons = 8;
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        
+        for (int i = 0; i < numButtons; i++)
+        {
+            GameObject button = Instantiate(btn);
+            button.name = "" + i;
+            button.transform.SetParent(puzzleField, false);
+        }
     }
 }
