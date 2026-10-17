@@ -552,6 +552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1397442151}
   - component: {fileID: 1397442150}
+  - component: {fileID: 1397442152}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -589,6 +590,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1397442152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397442149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17b4c4d6443081649bf58fe14e327bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameController
+  bgImage: {fileID: 21300000, guid: c81bfe16020a8674795f7054bc3a8574, type: 3}
 --- !u!1 &2114909717
 GameObject:
   m_ObjectHideFlags: 0
