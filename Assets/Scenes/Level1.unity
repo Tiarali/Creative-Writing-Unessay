@@ -603,6 +603,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameController
   bgImage: {fileID: 21300000, guid: c81bfe16020a8674795f7054bc3a8574, type: 3}
+  puzzles:
+  - {fileID: 21300000, guid: 1e6e4a024bcab854daeb2fba17885aa5, type: 3}
+  - {fileID: 21300000, guid: 7b61e035559a135458d1e3ffffd22bcf, type: 3}
+  - {fileID: 21300000, guid: a67f25f7abb914a439f1a4bf276fb04f, type: 3}
+  - {fileID: 21300000, guid: be96bc378da27974aa00e7f34f3aa3d2, type: 3}
+  - {fileID: 21300000, guid: 7008833b1ed4d07428f65e8d6aca2436, type: 3}
+  - {fileID: 21300000, guid: 98bb39242f3547840b6ba72315a2a9b4, type: 3}
+  - {fileID: 21300000, guid: fd328c183dbba954cb522cd203414ee1, type: 3}
+  - {fileID: 21300000, guid: 0287ba208488a5d47a6287511fd38fe7, type: 3}
+  gamePuzzles: []
 --- !u!1 &2114909717
 GameObject:
   m_ObjectHideFlags: 0
