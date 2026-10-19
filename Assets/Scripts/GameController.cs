@@ -27,6 +27,8 @@ public class GameController : MonoBehaviour
         GetButtons();
         AddListeners();
         AddGamePuzzles();
+        Shuffle(gamePuzzles);
+        gameGuesses = gamePuzzles.Count /2;
     }
 
     void GetButtons()
@@ -87,19 +89,61 @@ public class GameController : MonoBehaviour
 
             btns[secondGuessIndex].image.sprite = gamePuzzles[secondGuessIndex];
 
-            CheckPuzzle();
+            countGuesses++;
+
+            StartCoroutine(CheckPuzzle());
         }
     }
 
-    void CheckPuzzle()
+    IEnumerator CheckPuzzle()
     {
+        yield return new WaitForSeconds(1f);
         if(firstGuessPuzzle == secondGuessPuzzle)
         {
-            Debug.Log("Yay!");
+            yield return new WaitForSeconds(0.5f);
+            //Make buttons non interactable
+            btns[firstGuessIndex].interactable = false;
+            btns[secondGuessIndex].interactable = false;
+            
+            //Make buttons invisible
+            btns[firstGuessIndex].image.color = new Color (0f,0f,0f,0f);
+            btns[secondGuessIndex].image.color = new Color(0,0,0,0);
+
+            CheckLevelFinished();
         }
         else
         {
-            Debug.Log("Too bad");
+            btns[firstGuessIndex].image.sprite = bgImage;
+            btns[secondGuessIndex].image.sprite = bgImage;
+        }
+        ResetGuesses();
+    }
+
+    void CheckLevelFinished()
+    {
+        countCorrectGuesses++;
+
+        if(countCorrectGuesses == gameGuesses)
+        {
+            Debug.Log("Game finished!");
+            Debug.Log("It took you " + countGuesses);
+        }
+    }
+
+    void ResetGuesses()
+    {
+        firstGuess = false;
+        secondGuess = false;
+    }
+
+    void Shuffle(List<Sprite> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            Sprite temp = list[i];
+            int randomIndex = Random.Range(i, list.Count);
+            list[i] = list[randomIndex];
+            list[randomIndex] = temp;
         }
     }
 }
