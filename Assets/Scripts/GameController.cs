@@ -13,6 +13,9 @@ public class GameController : MonoBehaviour
     [Header("Buttons")]
     List<Button> btns = new List<Button>();
 
+    [Header("Logic")]
+
+    LevelManager levelManager;
     //logic
     bool firstGuess, secondGuess;
     int countGuesses;
@@ -24,6 +27,8 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        GameObject singletonObject = GameObject.FindWithTag("Singleton");
+        levelManager = singletonObject.GetComponentInChildren<LevelManager>();
         GetButtons();
         AddListeners();
         AddGamePuzzles();
@@ -125,8 +130,12 @@ public class GameController : MonoBehaviour
 
         if(countCorrectGuesses == gameGuesses)
         {
-            Debug.Log("Game finished!");
-            Debug.Log("It took you " + countGuesses);
+            //Play success sound
+
+            //Play Particle Effect
+
+            //Load next level
+            levelManager.Invoke("LoadNextLevel", 0.5f);
         }
     }
 
