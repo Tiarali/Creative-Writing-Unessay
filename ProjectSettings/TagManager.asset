@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PuzzleButton
   - Singleton
+  - Particles
   layers:
   - Default
   - TransparentFX

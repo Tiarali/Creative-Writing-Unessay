@@ -195,7 +195,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1197238919209548453}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5802829970411474308}
+        m_TargetAssemblyTypeName: Story, Assembly-CSharp
+        m_MethodName: CloseButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6605327100468793113
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +327,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8148609834324850172}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5802829970411474308}
+        m_TargetAssemblyTypeName: Story, Assembly-CSharp
+        m_MethodName: PressLeftButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7122874498085979406
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +690,7 @@ GameObject:
   - component: {fileID: 4264168050908882319}
   - component: {fileID: 2586341062571143137}
   - component: {fileID: 2234450246532042971}
+  - component: {fileID: 5802829970411474308}
   m_Layer: 5
   m_Name: StoryCanvas
   m_TagString: Untagged
@@ -760,6 +785,28 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5802829970411474308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7874409160412998897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee61efb4be237d14c8941d2107b63bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Story
+  pages:
+  - {fileID: 11400000, guid: 1e79fe4774510ad43ad01c5522664268, type: 2}
+  - {fileID: 11400000, guid: 2795e49845474624b80dfc158eb9788d, type: 2}
+  - {fileID: 11400000, guid: 8fc9625ba63a2be438d87a5d60224b1e, type: 2}
+  - {fileID: 11400000, guid: 07cb3562ece79b2479bed6847a025729, type: 2}
+  - {fileID: 11400000, guid: 5eac2e323b3cbe84e8174c4494d620cf, type: 2}
+  storyText: {fileID: 5937461494024017180}
+  leftButton: {fileID: 4787214776690857006}
+  rightButton: {fileID: 3424397876338984936}
+  storyCanvas: {fileID: 4264168050908882319}
 --- !u!1 &8301832207367102721
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,8 +922,20 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 6761407317102872371}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5802829970411474308}
+        m_TargetAssemblyTypeName: Story, Assembly-CSharp
+        m_MethodName: PressRightButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

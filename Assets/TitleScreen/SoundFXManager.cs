@@ -10,8 +10,9 @@ public class SoundFXManager : MonoBehaviour
     [SerializeField] AudioClip buttonClickClip;
     [SerializeField] AudioClip titleWhackClip;
     [SerializeField] AudioClip titleStingClip;
+    [SerializeField] AudioClip winGameClip;
 
-    
+    [SerializeField] float volume = 1.0f;
 
     
 
@@ -44,9 +45,19 @@ public class SoundFXManager : MonoBehaviour
         PlaySound(titleStingClip);
     }
 
+    public void PlayWinGameClip()
+    {
+        PlaySound(winGameClip);
+    }
+
     void PlaySound(AudioClip clip)
     {
-        AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position, 1.0f);
+        AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position, volume);
+    }
+
+    public void SetVolume(float amount)
+    {
+        volume = amount;
     }
     
 }

@@ -16,6 +16,9 @@ public class GameController : MonoBehaviour
     [Header("Logic")]
 
     LevelManager levelManager;
+    ParticleSystem winParticles;
+    SoundFXManager soundFXManager;
+    scoreManager score;
     //logic
     bool firstGuess, secondGuess;
     int countGuesses;
@@ -28,7 +31,11 @@ public class GameController : MonoBehaviour
     void Start()
     {
         GameObject singletonObject = GameObject.FindWithTag("Singleton");
+        score = singletonObject.GetComponentInChildren<scoreManager>();
         levelManager = singletonObject.GetComponentInChildren<LevelManager>();
+        winParticles = GameObject.FindWithTag("Particles").GetComponent<ParticleSystem>();
+        soundFXManager = singletonObject.GetComponentInChildren<SoundFXManager>();
+
         GetButtons();
         AddListeners();
         AddGamePuzzles();
@@ -76,6 +83,8 @@ public class GameController : MonoBehaviour
     {
         string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
 
+        soundFXManager.PlayTurnClip();
+
         if(!firstGuess)
         {
             firstGuess = true;
@@ -105,10 +114,13 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         if(firstGuessPuzzle == secondGuessPuzzle)
         {
+            score.AddScore();
+            soundFXManager.PlayMatchClip();
             yield return new WaitForSeconds(0.5f);
             //Make buttons non interactable
             btns[firstGuessIndex].interactable = false;
             btns[secondGuessIndex].interactable = false;
+
             
             //Make buttons invisible
             btns[firstGuessIndex].image.color = new Color (0f,0f,0f,0f);
@@ -120,6 +132,7 @@ public class GameController : MonoBehaviour
         {
             btns[firstGuessIndex].image.sprite = bgImage;
             btns[secondGuessIndex].image.sprite = bgImage;
+            soundFXManager.PlayTurnClip();
         }
         ResetGuesses();
     }
@@ -131,9 +144,9 @@ public class GameController : MonoBehaviour
         if(countCorrectGuesses == gameGuesses)
         {
             //Play success sound
-
+            soundFXManager.PlayWinLevelClip();
             //Play Particle Effect
-
+            winParticles.Play();
             //Load next level
             levelManager.Invoke("LoadNextLevel", 0.5f);
         }

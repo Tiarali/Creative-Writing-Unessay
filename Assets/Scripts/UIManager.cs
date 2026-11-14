@@ -33,4 +33,9 @@ public class UIManager : MonoBehaviour
     {
         levelManager.LoadNextLevel();
     }
+
+    public void MainMenuButton()
+    {
+        levelManager.LoadMainMenu();
+    }
 }
