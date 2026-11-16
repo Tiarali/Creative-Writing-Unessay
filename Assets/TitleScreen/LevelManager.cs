@@ -5,10 +5,13 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     int currentIndex;
+    GameObject singletonObject;
+    scoreManager score;
 
     void Start()
     {
-        
+        singletonObject = GameObject.FindWithTag("Singleton");
+        score = singletonObject.GetComponentInChildren<scoreManager>();
     }
 
     private void DetermineCurrentIndex()
@@ -23,6 +26,7 @@ public class LevelManager : MonoBehaviour
         int nextIndex = currentIndex + 1;
 
         SceneManager.LoadScene(nextIndex);
+        
     }
 
     public void LoadMainMenu()

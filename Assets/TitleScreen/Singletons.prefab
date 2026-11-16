@@ -149,6 +149,7 @@ MonoBehaviour:
   titleWhackClip: {fileID: 8300000, guid: edd5970b999617e418aced47fc5e82b1, type: 3}
   titleStingClip: {fileID: 8300000, guid: 28ea3f709e5d6e74aba861c62055cd39, type: 3}
   winGameClip: {fileID: 8300000, guid: fae0e0f16e74a6242893a33c47c00a9f, type: 3}
+  sliderClip: {fileID: 8300000, guid: 0fd4195af4fe5c6438117314723c2028, type: 3}
   volume: 1
 --- !u!1 &2133438900404244775
 GameObject:
@@ -194,6 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf9ff0ecdc3a1b44a8e99332ab0eb38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::scoreManager
+  story: {fileID: 0}
 --- !u!1 &6296225213119192538
 GameObject:
   m_ObjectHideFlags: 0

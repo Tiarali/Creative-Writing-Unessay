@@ -11,10 +11,16 @@ public class SoundFXManager : MonoBehaviour
     [SerializeField] AudioClip titleWhackClip;
     [SerializeField] AudioClip titleStingClip;
     [SerializeField] AudioClip winGameClip;
+    [SerializeField] AudioClip sliderClip;
+    GameObject singletonObject;
 
     [SerializeField] float volume = 1.0f;
 
-    
+    void Start()
+    {
+        singletonObject = GameObject.FindWithTag("Singleton");
+
+    }
 
     public void PlayTurnClip()
     {
@@ -24,6 +30,11 @@ public class SoundFXManager : MonoBehaviour
     {
         PlaySound(matchClip);
 
+    }
+
+    public void PlaySliderClip()
+    {
+        PlaySound(sliderClip);
     }
     public void PlayWinLevelClip()
     {
@@ -52,12 +63,43 @@ public class SoundFXManager : MonoBehaviour
 
     void PlaySound(AudioClip clip)
     {
-        AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position, volume);
+        LevelManager levelManager = singletonObject.GetComponentInChildren<LevelManager>();
+
+        if (levelManager.GetCurrentLevel() == 0)
+        {
+            AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position, 1f);
+        }
+        else
+        {
+            AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position, SetVolume());
+        }
     }
 
-    public void SetVolume(float amount)
+    float SetVolume()
     {
-        volume = amount;
+        if(PlayerPrefs.GetInt("MuteSound") == 1)
+        {
+            volume = 0f;
+        }
+        else
+        {
+            volume = PlayerPrefs.GetFloat("SoundVolume", 1f);
+        }
+        return volume;
+    }
+
+    public void SetMusicVolume()
+    {
+        if(PlayerPrefs.GetInt("MuteMusic") == 1)
+        {
+            singletonObject.GetComponent<AudioSource>().volume = 0f;
+        }
+        else
+        {
+            singletonObject.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("MusicVolume", 1f);
+
+        }
+
     }
     
 }

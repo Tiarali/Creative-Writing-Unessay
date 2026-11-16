@@ -1,13 +1,19 @@
 using UnityEngine;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
     GameObject singletonObject;
     AudioSource musicAudio;
     LevelManager levelManager;
+    //scoreManager score;
     SoundFXManager soundFXManager;
+    //scoreManager score;
     [SerializeField] Canvas optionsCanvas;
     [SerializeField] Canvas instructionsCanvas;
+    [SerializeField] Canvas storyCanvas;
+    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI hiScoreText;
 
     void Start()
     {
@@ -15,14 +21,12 @@ public class UIManager : MonoBehaviour
         musicAudio = singletonObject.GetComponent<AudioSource>();
         levelManager = singletonObject.GetComponentInChildren<LevelManager>();
         soundFXManager = singletonObject.GetComponentInChildren<SoundFXManager>();
+        //score = singletonObject.GetComponentInChildren<scoreManager>();
         CheckMusic();
     }
 
 
-    void Update()
-    {
-        
-    }
+    
 
     void CheckMusic()
     {
@@ -48,7 +52,6 @@ public class UIManager : MonoBehaviour
     {
         if(optionsCanvas != null)
         {
-            Debug.Log("open options canvas");
             optionsCanvas.enabled = true;
             soundFXManager.PlayButtonClickClip();
         }
@@ -60,7 +63,16 @@ public class UIManager : MonoBehaviour
         {
             optionsCanvas.enabled = false;
             soundFXManager.PlayButtonClickClip();
+            PlayerPrefs.Save();
+        }
+    }
 
+    public void OpenStoryButton()
+    {
+        soundFXManager.PlayButtonClickClip();
+        if (storyCanvas != null)
+        {
+            storyCanvas.enabled = true;
         }
     }
 
@@ -82,5 +94,11 @@ public class UIManager : MonoBehaviour
             soundFXManager.PlayButtonClickClip();
 
         }
+    }
+
+    public void UpdateEndText(int score, int hiScore)
+    {
+        scoreText.text = "Your score is: " + score;
+        hiScoreText.text = "Your current best score is: " + hiScore;
     }
 }

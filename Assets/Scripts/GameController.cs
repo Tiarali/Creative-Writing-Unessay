@@ -41,6 +41,8 @@ public class GameController : MonoBehaviour
         AddGamePuzzles();
         Shuffle(gamePuzzles);
         gameGuesses = gamePuzzles.Count /2;
+        score.UpdateScore();
+        score.SetGuess();
     }
 
     void GetButtons()
@@ -111,7 +113,8 @@ public class GameController : MonoBehaviour
 
     IEnumerator CheckPuzzle()
     {
-        yield return new WaitForSeconds(1f);
+        score.AddGuess();
+        yield return new WaitForSeconds(.5f);
         if(firstGuessPuzzle == secondGuessPuzzle)
         {
             score.AddScore();
