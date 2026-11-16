@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd7a15b0d8c4364cbdb6c952843cf64, type: 3}
   m_Name: Page 1
   m_EditorClassIdentifier: Assembly-CSharp::PageSO
-  page: Jessica Townsend is an author.
+  page: "Australian Jessica Townsend has wanted to be an author since she was 7 years
+    old, when her first story, \u2018The Three Koalas\u2019, was published in a library
+    newsletter."

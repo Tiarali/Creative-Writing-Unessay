@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd7a15b0d8c4364cbdb6c952843cf64, type: 3}
   m_Name: Page 5
   m_EditorClassIdentifier: Assembly-CSharp::PageSO
-  page: '5 5 5 5 5 '
+  page: 'She found it hard to write fiction after a day of writing for a paid job,
+    so moved back to Australia and worked for an insurance company while finishing
+    the book. '

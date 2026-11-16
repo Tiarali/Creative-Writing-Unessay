@@ -12,6 +12,7 @@ public class Story : MonoBehaviour
     [SerializeField] Sprite checkedSprite;
     [SerializeField] Sprite uncheckedSprite;
     [SerializeField] Button stopAutoOpenButton;
+    GameController gameController;
     GameObject singletonObject;
     int currentPage = 0;
     int openPages = 0;
@@ -30,6 +31,8 @@ public class Story : MonoBehaviour
 
     void Start()
     {
+        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+
         //Set Auto Open button image
         int autoOpen = PlayerPrefs.GetInt("AutoOpen", 0);
 
@@ -60,6 +63,17 @@ public class Story : MonoBehaviour
         }
     }
 
+    public void AutoOpenPage()
+    {
+        openPages = score.ReturnUnlockedPages();
+
+        int pageToOpen = openPages - 1;
+        currentPage = pageToOpen;
+        storyText.text = pages[currentPage].GetPage();
+        ToggleLeftButton();
+        ToggleRightButton();
+    }
+
     
 
     public void CloseButton()
@@ -67,6 +81,10 @@ public class Story : MonoBehaviour
         soundFXManager.PlayButtonClickClip();
         PlayerPrefs.Save();
         gameObject.GetComponent<Canvas>().enabled = false;
+        if (gameController.GetGameWon())
+        {
+            gameController.SetStoryClosedAfterLevelEnd();
+        }
     }
 
     void ShowPage()

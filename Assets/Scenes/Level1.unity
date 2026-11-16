@@ -592,6 +592,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4528766752855137326, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528766752855137326, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528766752855137326, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5198118634304631513, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -672,6 +684,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: pages.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c950b58cc7e93f4d9bbeb86994caf47, type: 2}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[6]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ca1f7dbdbbcdf9e42a704fd3be2f5081, type: 2}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[7]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 579a6cbd17270814aa8888d2e7e7706c, type: 2}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[8]'
+      value: 
+      objectReference: {fileID: 11400000, guid: fb90ff5f2e3cef04e881e5d69dafb74e, type: 2}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[9]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7d824cda1747a314381c03148b9a965e, type: 2}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[10]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8327c3ba9adce3e4b9b4cde1cfbd33e1, type: 2}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[11]'
+      value: 
+      objectReference: {fileID: 11400000, guid: df34f7735e94fd045903bd93342dd472, type: 2}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[12]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4d952a356298ea24c95f7b45f2314973, type: 2}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[13]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 417554c2c51277a4c99c215c9ed7a5c4, type: 2}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[14]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a443a6bc6ff75b849b86277e5a073de5, type: 2}
     - target: {fileID: 7874409160412998897, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
       propertyPath: m_Name
       value: StoryCanvas
@@ -785,9 +841,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3714467197786948739, guid: 7d7c706856fadf140a7e834985103e71, type: 3}
-      propertyPath: levelManager
+      propertyPath: story
       value: 
-      objectReference: {fileID: 7231316304148398497}
+      objectReference: {fileID: 1626909532}
+    - target: {fileID: 3714467197786948739, guid: 7d7c706856fadf140a7e834985103e71, type: 3}
+      propertyPath: gameCanvas
+      value: 
+      objectReference: {fileID: 61523167}
     - target: {fileID: 4363611936439395012, guid: 7d7c706856fadf140a7e834985103e71, type: 3}
       propertyPath: m_Name
       value: GameController
@@ -910,17 +970,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0006103b92269a54db3f7df57e925ce1, type: 3}
---- !u!114 &7231316304148398497 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5188588865192438722, guid: 0006103b92269a54db3f7df57e925ce1, type: 3}
-  m_PrefabInstance: {fileID: 7231316304148398496}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f3b4e80e9eede641ba1428e85b93187, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LevelManager
 --- !u!1001 &8399300877739414600
 PrefabInstance:
   m_ObjectHideFlags: 0

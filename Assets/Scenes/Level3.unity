@@ -470,6 +470,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: pages.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c950b58cc7e93f4d9bbeb86994caf47, type: 2}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[6]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ca1f7dbdbbcdf9e42a704fd3be2f5081, type: 2}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[7]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 579a6cbd17270814aa8888d2e7e7706c, type: 2}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[8]'
+      value: 
+      objectReference: {fileID: 11400000, guid: fb90ff5f2e3cef04e881e5d69dafb74e, type: 2}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[9]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7d824cda1747a314381c03148b9a965e, type: 2}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[10]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8327c3ba9adce3e4b9b4cde1cfbd33e1, type: 2}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[11]'
+      value: 
+      objectReference: {fileID: 11400000, guid: df34f7735e94fd045903bd93342dd472, type: 2}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[12]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4d952a356298ea24c95f7b45f2314973, type: 2}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[13]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 417554c2c51277a4c99c215c9ed7a5c4, type: 2}
+    - target: {fileID: 5802829970411474308, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
+      propertyPath: 'pages.Array.data[14]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a443a6bc6ff75b849b86277e5a073de5, type: 2}
     - target: {fileID: 7874409160412998897, guid: 893b4687958a6cf49bd1bd71696834dc, type: 3}
       propertyPath: m_Name
       value: StoryCanvas
@@ -487,6 +531,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 835798966539259767, guid: 0006103b92269a54db3f7df57e925ce1, type: 3}
+      propertyPath: story
+      value: 
+      objectReference: {fileID: 528775752}
     - target: {fileID: 835798966539259767, guid: 0006103b92269a54db3f7df57e925ce1, type: 3}
       propertyPath: scoreText
       value: 
@@ -605,6 +653,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameController
   bgImage: {fileID: 21300000, guid: c81bfe16020a8674795f7054bc3a8574, type: 3}
+  gameCanvas: {fileID: 1971281575}
+  story: {fileID: 528775752}
   puzzles:
   - {fileID: 21300000, guid: fb8b00a20dd5b564dae1fd9750e05e56, type: 3}
   - {fileID: 21300000, guid: 94d67131866dc9643b6d0823050be48e, type: 3}

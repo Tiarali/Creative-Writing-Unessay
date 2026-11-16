@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3714467197786948739}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,6 +61,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameController
   bgImage: {fileID: 21300000, guid: c81bfe16020a8674795f7054bc3a8574, type: 3}
+  gameCanvas: {fileID: 0}
+  story: {fileID: 0}
   puzzles:
   - {fileID: 21300000, guid: fb8b00a20dd5b564dae1fd9750e05e56, type: 3}
   - {fileID: 21300000, guid: 94d67131866dc9643b6d0823050be48e, type: 3}
@@ -71,4 +73,3 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fd964d3a43f94de4a9c86fe2084710d6, type: 3}
   - {fileID: 21300000, guid: f613fa7033e60904c87d8a828b61c418, type: 3}
   gamePuzzles: []
-  levelManager: {fileID: 0}

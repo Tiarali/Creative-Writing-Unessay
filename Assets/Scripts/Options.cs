@@ -12,7 +12,7 @@ public class Options : MonoBehaviour
     [SerializeField] Slider soundSlider;
     [SerializeField] Slider musicSlider;
     //bool fontBool;
-    public event System.Action<bool> changeFont;
+    //public event System.Action<bool> changeFont;
     scoreManager score;
     SoundFXManager soundFXManager;
     //int font;

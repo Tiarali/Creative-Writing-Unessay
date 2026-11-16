@@ -12,7 +12,6 @@ public class GameCanvas : MonoBehaviour
     {
         GameObject singletonObject = GameObject.FindWithTag("Singleton");
         soundFXManager = singletonObject.GetComponentInChildren<SoundFXManager>();
-        
         storyButton.interactable = false;
         storyCanvas.enabled = false;
     }
@@ -29,6 +28,12 @@ public class GameCanvas : MonoBehaviour
         storyCanvas.enabled = true;
         
         
+    }
+
+    public void OpenStoryCanvasQuietly()
+    {
+        storyCanvas.enabled = true;
+
     }
 
     public void CloseOptionsCanvas()

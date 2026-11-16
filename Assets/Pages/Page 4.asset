@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd7a15b0d8c4364cbdb6c952843cf64, type: 3}
   m_Name: Page 4
   m_EditorClassIdentifier: Assembly-CSharp::PageSO
-  page: This is information number 4!
+  page: 'She moved to London because she knew she needed to experience a large, crazy,
+    city to write the setting of her book. '

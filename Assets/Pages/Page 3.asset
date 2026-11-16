@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd7a15b0d8c4364cbdb6c952843cf64, type: 3}
   m_Name: Page 3
   m_EditorClassIdentifier: Assembly-CSharp::PageSO
-  page: Her first story was called 'Three Little Koalas'.
+  page: After school, she took some copyediting jobs working for Australia Zoo, and
+    then in London, while also writing her first novel.

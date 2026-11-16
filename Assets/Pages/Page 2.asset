@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd7a15b0d8c4364cbdb6c952843cf64, type: 3}
   m_Name: Page 2
   m_EditorClassIdentifier: Assembly-CSharp::PageSO
-  page: She wrote Nevermoor.
+  page: "She is the author of four middle-grade fantasy novels, starting with \u2018Nevermoor:
+    The Trials of Morrigan Crow\u2019, first published in 2017."

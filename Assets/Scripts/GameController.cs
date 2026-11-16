@@ -7,6 +7,8 @@ public class GameController : MonoBehaviour
 {
     [Header ("Images")]
     [SerializeField] Sprite bgImage;
+    [SerializeField] GameCanvas gameCanvas;
+    [SerializeField] Story story;
 
     public Sprite[] puzzles;
     public List<Sprite> gamePuzzles = new List<Sprite>();
@@ -26,6 +28,9 @@ public class GameController : MonoBehaviour
     int gameGuesses;
     int firstGuessIndex, secondGuessIndex;
     string firstGuessPuzzle, secondGuessPuzzle;
+
+    bool storyClosedAfterLevelEnd = false;
+    bool gameWon = false;
 
 
     void Start()
@@ -129,6 +134,7 @@ public class GameController : MonoBehaviour
             btns[firstGuessIndex].image.color = new Color (0f,0f,0f,0f);
             btns[secondGuessIndex].image.color = new Color(0,0,0,0);
 
+            CheckOpenStory();
             CheckLevelFinished();
         }
         else
@@ -140,19 +146,71 @@ public class GameController : MonoBehaviour
         ResetGuesses();
     }
 
+    public void SetStoryClosedAfterLevelEnd()
+    {
+        storyClosedAfterLevelEnd = true;
+    }
+
+    void CheckOpenStory()
+    {
+        // if autoopen allowed
+        int autoOpen = PlayerPrefs.GetInt("AutoOpen", 0);
+
+        if (autoOpen == 0) //not stopped from auto opening
+        {
+            gameCanvas.OpenStoryCanvasQuietly();
+            story.AutoOpenPage();
+        }
+    }
+
     void CheckLevelFinished()
     {
         countCorrectGuesses++;
 
         if(countCorrectGuesses == gameGuesses)
         {
-            //Play success sound
-            soundFXManager.PlayWinLevelClip();
-            //Play Particle Effect
-            winParticles.Play();
-            //Load next level
-            levelManager.Invoke("LoadNextLevel", 0.5f);
+            gameWon = true;
+            int autoOpen = PlayerPrefs.GetInt("AutoOpen", 0);
+
+            if (autoOpen == 1) //stopped from auto opening
+            {
+                LevelWin();
+            }
+            else
+            {
+                storyClosedAfterLevelEnd = false;
+                //trigger levelwin when story closed
+                StartCoroutine(WaitForValueChange());
+            }
         }
+    }
+
+    public bool GetGameWon()
+    {
+        return gameWon;
+    }
+
+    IEnumerator WaitForValueChange()
+    {
+        
+
+        // Loop safely across frames until the value changes
+        while (storyClosedAfterLevelEnd == false)
+        {
+            yield return null; // Pauses until the next frame
+        }
+
+        LevelWin();
+    }
+
+    void LevelWin()
+    {
+        //Play success sound
+        soundFXManager.PlayWinLevelClip();
+        //Play Particle Effect
+        winParticles.Play();
+        //Load next level
+        levelManager.Invoke("LoadNextLevel", 1f);
     }
 
     void ResetGuesses()
